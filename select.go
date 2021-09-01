@@ -1,12 +1,14 @@
 package linq
 
-func (q *Query[T]) Select(f func(T) bool) *Query[T] {
-	var t = new(Query[T])
-	for _, v := range *q {
+func (q *query[T]) Select(f func(T) bool) *query[T] {
+	var list = new(List[T])
+	for _, v := range *q.Val {
+		// for _, v := range q.ToArray() {
 		if f(v) {
-			*t = append(*t, v)
-			// t = t.Add(v)
+			*list = append(*list, v)
+			// q = q.Add(v)
 		}
 	}
-	return t
+	q.Val = list
+	return q
 }

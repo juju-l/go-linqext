@@ -1,5 +1,5 @@
 package linq
 
-func (q *Query[T]) Count() int {
-	return len(*q)
+func (q *query[T]) Count() int {
+	return len(*q.Val)
 }

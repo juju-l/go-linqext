@@ -1,6 +1,6 @@
 package linq
 
-func (q *Query[T]) Add(v T) *Query[T] {
-	*q = append(*q, v)
+func (q *query[T]) Add(v T) *query[T] {
+	*q.Val = append(*q.Val, v)
 	return q
 }
