@@ -1,5 +1,5 @@
 package linq
 
-func (q *query) ToArray() List[T] {
+func (q *query[T]) ToArray() List[T] {
 	return *q.Val
 }
